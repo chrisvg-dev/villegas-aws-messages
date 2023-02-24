@@ -10,7 +10,13 @@ export const Message = () => {
         <>
             <section className='container'>
                 <h1>Envia SMS a los dispositivos registrados</h1>
-                <input onKeyUp={sendMessage} className='form-control' type="text" placeholder='Ingresa el mensaje' />
+                <input 
+                    onKeyUp={ evt => {
+                        if (evt.key === 'Enter') sendMessage(); 
+                    } } 
+                    className='form-control' 
+                    type="text" 
+                    placeholder='Ingresa el mensaje' />
             </section>
         </>
     );
