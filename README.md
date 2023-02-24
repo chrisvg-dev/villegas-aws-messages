@@ -2,3 +2,4 @@
 
 ## Colaboradores
 1. Cristhian Villegas Garcia
+2. Luis Alberto Virgen Villegas
