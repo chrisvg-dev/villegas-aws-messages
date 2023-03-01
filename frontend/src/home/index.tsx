@@ -5,9 +5,15 @@ export const Message = () => {
     const url = 'http://localhost:9090/api/messages';
 
     const sendMessage = async (message: string) => {
-        await fetch(url + '?message=' + message)
-            .then( response => response.json() )
-            .then( jsonResponse => alert(jsonResponse.message) );
+        await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify( { message: message } )
+        })
+        .then( response => {
+            console.log(response);
+            return response.json();
+        } )
+        .then( jsonResponse => alert(jsonResponse.message) );
     }
 
     return (
