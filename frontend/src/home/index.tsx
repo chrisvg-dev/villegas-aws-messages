@@ -7,6 +7,7 @@ export const Message = () => {
     const sendMessage = async (message: string) => {
         await fetch(url, {
             method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify( { message: message } )
         })
         .then( response => {

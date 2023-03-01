@@ -12,7 +12,6 @@ import villegas.aws.messages.backend.dto.CustomResponse;
 public class MessagesController {
     @PostMapping
     public ResponseEntity<?> index(@RequestBody CustomRequest request) {
-        System.err.println(request);
         CustomResponse response = new CustomResponse();
         response.setMessage( request.getMessage() );
         return ResponseEntity.ok(response);
